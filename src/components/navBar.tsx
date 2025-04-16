@@ -65,7 +65,7 @@ export default function HeaderNav() {
                 placeholder="Recherche"
                 value={searchValue}
                 onChange={handleSearchChange}
-                className="w-64 py-2 pl-10 pr-4 rounded-full border border-coral-400 focus:outline-none focus:ring-2 focus:ring-coral-300"
+                className="w-64 py-2 pl-10 pr-4 rounded-full border border-coral-400 focus:outline-none focus:ring-2 focus:ring-orange-700"
               />
               <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
                 <Search className="h-5 w-5 text-gray-400" />
