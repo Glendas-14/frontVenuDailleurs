@@ -39,7 +39,7 @@ export default function HeaderNav() {
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/" className="text-gray-800 hover:text-red-600 font-medium">
-            Home
+            Acceuil
           </Link>
           <Link to="/collection" className="text-gray-800 hover:text-red-600 font-medium">
             Collection

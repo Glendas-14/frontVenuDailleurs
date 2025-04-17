@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Image from "next/image"
+// import Image from "next/image"
 
 export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1)
@@ -19,7 +19,7 @@ export default function ProductDetail() {
         {/* Product Image */}
         <div className="bg-white p-6 rounded-lg shadow-sm">
           <div className="relative aspect-square">
-            <Image
+            <img
               src="/placeholder.svg?height=500&width=500"
               alt="T-shirt Kratos"
               width={500}

@@ -1,9 +1,11 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Inscription from './components/pages/inscription'
-import NavBar from './components/navBar'
+import Login from './components/pages/login'
+import Landingpage from './components/pages/landingPage'
+// import NavBar from './components/navBar'
 // import './App.css'
 
 function App() {
@@ -11,10 +13,17 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className='w-full flex flex-col items-center gap-6 justify-center'>
-        <NavBar/>
-        <Inscription/>
-      </div>
+      <Routes>
+        <Route path='/'>
+          <Route index element={<Landingpage/>}/>
+        </Route>
+        <Route path='/register'>
+          <Route index element={<Inscription/>}/>
+        </Route>
+        <Route path='/login'>
+          <Route index element={<Login/>}/>
+        </Route>
+      </Routes>
     </BrowserRouter>
   )
 }
