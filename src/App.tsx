@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Inscription from './components/pages/inscription'
 import Login from './components/pages/login'
 import Landingpage from './components/pages/landingPage'
+import Articles from './components/pages/Articles'
 // import NavBar from './components/navBar'
 // import './App.css'
 
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path='/login'>
           <Route index element={<Login/>}/>
+        </Route>
+        <Route path='/articles'>
+          <Route index element={<Articles/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

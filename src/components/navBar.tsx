@@ -27,7 +27,7 @@ export default function HeaderNav() {
           <Link to="/">
             <div className="relative w-16 h-16">
               
-              <Link to={`#`}><img src="/images/logo.png" alt="Logo V.A" /></Link>
+              <Link to={`/`}><img src="/images/logo.png" alt="Logo V.A" /></Link>
               {/* <svg viewBox="0 0 100 100" className="w-full h-full">
                 <polygon points="50,10 20,90 80,90" fill="none" stroke="#CC0000" strokeWidth="6" />
                 <polygon points="50,90 20,10 80,10" fill="none" stroke="#CC0000" strokeWidth="6" />
@@ -41,14 +41,14 @@ export default function HeaderNav() {
           <Link to="/" className="text-gray-800 hover:text-red-600 font-medium">
             Acceuil
           </Link>
-          <Link to="/collection" className="text-gray-800 hover:text-red-600 font-medium">
-            Collection
+          <Link to="/a-propos" className="text-gray-800 hover:text-red-600 font-medium">
+            A propos
           </Link>
           <Link to="/articles" className="text-gray-800 hover:text-red-600 font-medium">
             Articles
           </Link>
-          <Link to="/a-propos" className="text-gray-800 hover:text-red-600 font-medium">
-            A Propos
+          <Link to="/collection" className="text-gray-800 hover:text-red-600 font-medium">
+            Collection
           </Link>
           <Link to="/contact" className="text-gray-800 hover:text-red-600 font-medium">
             Contact
@@ -80,7 +80,7 @@ export default function HeaderNav() {
           </Link>
 
           {/* User Icon */}
-          <Link to="/compte" className="border-l pl-6 border-gray-300">
+          <Link to="/register" className="border-l pl-6 border-gray-300">
             <User className="h-7 w-7 text-gray-800" />
           </Link>
         </div>
