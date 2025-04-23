@@ -68,9 +68,9 @@ export default function LandingPage() {
         <div id='whyUsSection' className='h-[35rem] bg-white py-10 flex flex-col gap-10'>
           <BigTitle id="whyUs">Pourquoi nous</BigTitle>
           <div id='whyUsContent' className='w-full h-full flex justify-center items-center gap-10 px-10'>
-            <Card/>
-            <Card/>
-            <Card/>
+            <Card title='Livraison rapide et gratuite' description='Nous vous offrons une livraison rapide et gratuite à partir de 3 pièces' imageUrl='/svg/car.svg'/>
+            <Card title='Personnalisation' description='Vous avez la possibilité de personnaliser la marque' imageUrl='/svg/edit.svg'/>
+            <Card title='Meilleure qualité' description='Nous assurons la meilleure qualité de nos produits' imageUrl='/svg/quality.svg'/>
           </div>
         </div>
     </div>
