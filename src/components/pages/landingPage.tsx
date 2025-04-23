@@ -73,6 +73,10 @@ export default function LandingPage() {
             <Card title='Meilleure qualité' description='Nous assurons la meilleure qualité de nos produits' imageUrl='/svg/quality.svg'/>
           </div>
         </div>
+        <div id='articleSection' className='h-[35rem] bg-simpleGray py-10 flex flex-col gap-10'>
+          <BigTitle id="articles">Nos articles</BigTitle>
+
+        </div>
     </div>
   )
 }
