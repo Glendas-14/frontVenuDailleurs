@@ -1,13 +1,10 @@
-"use client"
-
-import type React from "react"
-
 import { useState } from "react"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import { Search, ShoppingCart, User } from "lucide-react"
 
 export default function HeaderNav() {
   const [searchValue, setSearchValue] = useState("")
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false) // État pour le dropdown
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value)
@@ -15,8 +12,11 @@ export default function HeaderNav() {
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Logique de recherche ici
     console.log("Recherche:", searchValue)
+  }
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen)
   }
 
   return (
@@ -26,12 +26,7 @@ export default function HeaderNav() {
         <div className="flex-shrink-0 mr-10">
           <Link to="/">
             <div className="relative w-16 h-16">
-              
               <Link to={`/`}><img src="/images/logo.png" alt="Logo V.A" /></Link>
-              {/* <svg viewBox="0 0 100 100" className="w-full h-full">
-                <polygon points="50,10 20,90 80,90" fill="none" stroke="#CC0000" strokeWidth="6" />
-                <polygon points="50,90 20,10 80,10" fill="none" stroke="#CC0000" strokeWidth="6" />
-              </svg> */}
             </div>
           </Link>
         </div>
@@ -47,9 +42,44 @@ export default function HeaderNav() {
           <Link to="/articles" className="text-gray-800 hover:text-red-600 font-medium">
             Articles
           </Link>
-          <Link to="/collection" className="text-gray-800 hover:text-red-600 font-medium">
-            Collection
-          </Link>
+          <div className="relative">
+            <button
+              onClick={toggleDropdown}
+              className="text-gray-800 hover:text-red-600 font-medium focus:outline-none"
+            >
+              Collections
+            </button>
+            {isDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg w-48">
+                <ul className="py-2">
+                  <li>
+                    <Link
+                      to="/collection1"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-red-600"
+                    >
+                      Venu d'ailleurs style
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/collection2"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-red-600"
+                    >
+                      DMF style
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/collection3"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-red-600"
+                    >
+                      Personal Art
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
           <Link to="/contact" className="text-gray-800 hover:text-red-600 font-medium">
             Contact
           </Link>
@@ -88,4 +118,3 @@ export default function HeaderNav() {
     </header>
   )
 }
-
