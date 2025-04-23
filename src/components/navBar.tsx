@@ -20,7 +20,7 @@ export default function HeaderNav() {
   }
 
   return (
-    <header className="w-full h-20 flex flex-row items-center bg-white py-4 px-6 border-b border-gray-100 shadow-sm shadow-orange-700">
+    <header className="w-full h-20 flex flex-row items-center bg-white py-4 px-6 border-b border-gray-100 shadow-sm shadow-orange-700 sticky top-0 z-50">
       <div className="w-full mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0 mr-10">
