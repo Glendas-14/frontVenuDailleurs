@@ -13,10 +13,13 @@ export default {
         'simpleGray': '#E5E5E5',
         'darkGray': '#333333',
         'lightGray': '#A0A0A0',
+        'darkBlue': '#002C3E',
       },
       backgroundImage: {
         'heroPattern': "url('/images/Bg.png')",
         'mainGradient': 'linear-gradient(to bottom right, #FF8A00, #D83000)',
+        'secondaryGradient': 'linear-gradient(to bottom right, #FF8A00, #7C2D12)',
+        'chocoGradient': 'linear-gradient(to bottom right, #5c0000, #7C2D12)',
       },
       fontFamily: {
         playfair: ['"Playfair Display"', 'serif'],
