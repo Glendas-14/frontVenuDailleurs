@@ -50,10 +50,8 @@ export default function LandingPage() {
             </div>
             <div id='text' className="w-1/2 flex flex-col justify-center gap-10 pl-8">
               <p className="text-gray-800 mb-6 leading-relaxed text-justify">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
+                Venue D'ailleurs est une marque qui vous aide à exprimer et affimer votre identité singulière avec Style et Originalité. 
+              
               </p>
 
               <div>
