@@ -10,7 +10,7 @@ interface ProductCardProps {
 }
 export default function ProductCard({ title, description, imageUrl, price }: ProductCardProps) {
     return (
-      <div className="w-1/4 h-full bg-none border-r-black border-b-black border-[1px] p-2">
+      <div className="w-1/4 h-full bg-none border-r-black border-b-black border-[1px] p-2 hover:border-none hover:shadow-xl shadow-black">
         <div className="w-full h-full p-6 flex flex-col items-center bg-whiteGray">
             <Link to={`/products`}><img src={imageUrl} alt="Product" className="w-48 h-28 mx-auto mb-4 drop-shadow-[15px_6px_12px_rgba(0,0,0)]" /></Link>
             <h2 className="text-xl font-bold text-gray-800">{title}</h2>

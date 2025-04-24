@@ -1,10 +1,11 @@
 // import { useState } from "react"
 import { Link } from 'react-router-dom'
 import Header from '../navBar'
-import { Info, ShoppingCart } from 'lucide-react'
+import { Eye, Info, ShoppingCart } from 'lucide-react'
 import BigTitle from '../Title/bigTitle'
 import Card from '../Card/card1'
 import ProductCard from '../Card/product'
+import CollectionCard from '../Card/collection'
 
 
 export default function LandingPage() {
@@ -84,6 +85,20 @@ export default function LandingPage() {
           <Link to={`/products`} className="bg-mainGradient w-1/5 rounded-2xl py-2 ml-5 flex justify-center items-center hover:bg-secondaryGradient hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-secondaryOrange">
             <span>Découvrez plus</span>
           </Link>
+        </div>
+        <div id='collectionSection' className='h-[40rem] bg-white p-10 flex flex-col gap-10'>
+          <BigTitle id='collections' children={`Nos collections`}/>
+          <div id='collections' className='w-full h-full flex items-center justify-center gap-10'>
+            <CollectionCard title="V A style"/>
+            <CollectionCard title="DMF collection"/>
+            <CollectionCard title="Personal Art"/>
+          </div>
+          <div id='sectionBtn' className='w-full flex justify-end'>
+            <Link to={`/about`} className="w-56 bg-orangeChoco hover:bg-secondaryOrange font-roboto font-bold text-white px-6 py-3 rounded-md flex justify-center items-center space-x-5 transition-colors">
+                <span>Voir plus</span>
+                <Eye size={25} />
+              </Link>
+          </div>
         </div>
     </div>
   )
