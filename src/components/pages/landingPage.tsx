@@ -4,6 +4,7 @@ import Header from '../navBar'
 import { Info, ShoppingCart } from 'lucide-react'
 import BigTitle from '../Title/bigTitle'
 import Card from '../Card/card1'
+import ProductCard from '../Card/product'
 
 
 export default function LandingPage() {
@@ -34,7 +35,7 @@ export default function LandingPage() {
               </div>
             </div>
         </div>
-        <div id='aboutSection' className='h-[35rem] bg-simpleGray py-10 flex flex-col gap-10'>
+        <div id='aboutSection' className='h-[35rem] bg-simpleGray p-10 flex flex-col gap-10'>
           <BigTitle id="about">A propos de nous</BigTitle>
           <div id='aboutContent' className='w-full h-full flex justify-center items-center gap-10 px-10'>
             <div id='decoration' className="w-1/2 pt-10 pl-0 pr-10 border-r-[1px] border-black">
@@ -63,7 +64,7 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-        <div id='whyUsSection' className='h-[35rem] bg-white py-10 flex flex-col gap-10'>
+        <div id='whyUsSection' className='h-[35rem] bg-white p-10 flex flex-col gap-10'>
           <BigTitle id="whyUs">Pourquoi nous</BigTitle>
           <div id='whyUsContent' className='w-full h-full flex justify-center items-center gap-10 px-10'>
             <Card title='Livraison rapide et gratuite' description='Nous vous offrons une livraison rapide et gratuite à partir de 3 pièces' imageUrl='/svg/car.svg'/>
@@ -71,9 +72,18 @@ export default function LandingPage() {
             <Card title='Meilleure qualité' description='Nous assurons la meilleure qualité de nos produits' imageUrl='/svg/quality.svg'/>
           </div>
         </div>
-        <div id='articleSection' className='h-[35rem] bg-simpleGray py-10 flex flex-col gap-10'>
+        <div id='articleSection' className='h-[40rem] bg-simpleGray p-10 flex flex-col gap-10'>
           <BigTitle id="articles">Nos articles</BigTitle>
+          <div id='products' className='w-full h-auto flex flex-row items-center justify-center gap-10'>
+            <ProductCard title='T-shirt motif' description='T-shirt aux multiples motifs diversifiés ' imageUrl='/images/blancMotifVa.png' price={25}/>
+            <ProductCard title='T-shirt Thanos' description='T-shirt avec visage de thanos' imageUrl='/images/blackCEV.png' price={25}/>
+            <ProductCard title='T-shirt Kratos' description='T-shirt avec visage du super héro' imageUrl='/images/blancKratos.png' price={25}/>
+            <ProductCard title='T-shirt Wakanda' description='T-shirt avec visage du black panthère' imageUrl='images/wakanda.png'price={25}/>
 
+          </div>
+          <Link to={`/products`} className="bg-mainGradient w-1/5 rounded-2xl py-2 ml-5 flex justify-center items-center hover:bg-secondaryGradient hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-secondaryOrange">
+            <span>Découvrez plus</span>
+          </Link>
         </div>
     </div>
   )

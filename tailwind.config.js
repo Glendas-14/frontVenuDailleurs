@@ -13,6 +13,7 @@ export default {
         'simpleGray': '#E5E5E5',
         'darkGray': '#333333',
         'lightGray': '#A0A0A0',
+        'whiteGray': '#F7F8F9',
         'darkBlue': '#002C3E',
       },
       backgroundImage: {
