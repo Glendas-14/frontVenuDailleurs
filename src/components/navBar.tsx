@@ -76,6 +76,14 @@ export default function HeaderNav() {
                       Personal Art
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      to="/collection4"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-red-600"
+                    >
+                      Mode et Actu
+                    </Link>
+                  </li>
                 </ul>
               </div>
             )}

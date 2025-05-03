@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom'
 import Header from '../navBar'
 import { Eye, Info, ShoppingCart } from 'lucide-react'
 import BigTitle from '../Title/bigTitle'
-import Card from '../Card/card1'
+import Card from '../Card/simpleCard'
 import ProductCard from '../Card/product'
 import CollectionCard from '../Card/collection'
+import collections from '../data/collections'
+import products from '../data/products'
+
 
 
 export default function LandingPage() {
@@ -73,7 +76,7 @@ export default function LandingPage() {
             <Card title='Meilleure qualité' description='Nous assurons la meilleure qualité de nos produits' imageUrl='/svg/quality.svg'/>
           </div>
         </div>
-        <div id='articleSection' className='h-[40rem] bg-simpleGray p-10 flex flex-col gap-10'>
+        {/* <div id='articleSection' className='h-[40rem] bg-simpleGray p-10 flex flex-col gap-10'>
           <BigTitle id="articles">Nos articles</BigTitle>
           <div id='products' className='w-full h-auto flex flex-row items-center justify-center gap-10'>
             <ProductCard title='T-shirt motif' description='T-shirt aux multiples motifs diversifiés ' imageUrl='/images/blancMotifVa.png' price={25}/>
@@ -85,19 +88,47 @@ export default function LandingPage() {
           <Link to={`/products`} className="bg-mainGradient w-1/5 rounded-2xl py-2 ml-5 flex justify-center items-center hover:bg-secondaryGradient hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-secondaryOrange">
             <span>Découvrez plus</span>
           </Link>
+        </div> */}
+
+        <div id='articleSection' className='h-[40rem] bg-simpleGray p-10 flex flex-col gap-10'>
+          <BigTitle id="articles">Nos articles</BigTitle>
+          <div id='products' className='w-full h-auto flex flex-row items-center justify-center gap-10'>
+            {products.slice(0, 4).map((product, index) => (
+              <ProductCard
+                key={index}
+                title={product.title ?? 'Article quelconque'}
+                description={product.description ?? 'Description non disponible'}
+                imageUrl={product.imageUrl ?? ''}
+                price={product.price ?? 0}
+              />
+            ))}
+          </div>
+          <Link
+            to={`/products`}
+            className="bg-mainGradient w-1/5 rounded-2xl py-2 ml-5 flex justify-center items-center hover:bg-secondaryGradient hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-secondaryOrange"
+          >
+            <span>Découvrez plus</span>
+          </Link>
         </div>
         <div id='collectionSection' className='h-[40rem] bg-white p-10 flex flex-col gap-10'>
-          <BigTitle id='collections' children={`Nos collections`}/>
+          <BigTitle id='collections' children={`Nos collections`} />
           <div id='collections' className='w-full h-full flex items-center justify-center gap-10'>
-            <CollectionCard title="V A style"/>
-            <CollectionCard title="DMF collection"/>
-            <CollectionCard title="Personal Art"/>
+            {collections.slice(0, 3).map((collection, index) => (
+              <CollectionCard
+                key={index}
+                title={collection.title}
+                images={collection.images}
+              />
+            ))}
           </div>
           <div id='sectionBtn' className='w-full flex justify-end'>
-            <Link to={`/about`} className="w-56 bg-orangeChoco hover:bg-secondaryOrange font-roboto font-bold text-white px-6 py-3 rounded-md flex justify-center items-center space-x-5 transition-colors">
-                <span>Voir plus</span>
-                <Eye size={25} />
-              </Link>
+            <Link
+              to={`/about`}
+              className="w-56 bg-orangeChoco hover:bg-secondaryOrange font-roboto font-bold text-white px-6 py-3 rounded-md flex justify-center items-center space-x-5 transition-colors"
+            >
+              <span>Voir plus</span>
+              <Eye size={25} />
+            </Link>
           </div>
         </div>
     </div>
