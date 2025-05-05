@@ -131,6 +131,52 @@ export default function LandingPage() {
             </Link>
           </div>
         </div>
+        <div id='serviceSection' className='h-[35rem] bg-lightGray p-10 flex flex-col gap-10'>
+          <BigTitle id="services">Nos services</BigTitle>
+          <div id='servicesContent' className='w-full h-3/4 flex justify-center items-center gap-10'>
+            <div id='image' className="w-1/2 h-full flex items-center justify-center rounded-md">
+              <img src="/images/impressionT.jpg" alt="multiple services" className="w-3/4 h-3/4 rounded-md shadow-sm shadow-black" />
+            </div>
+            <div id='text' className="w-1/2 flex flex-col justify-center gap-0 pl-8">
+              <div id='service1' className='flex flex-row gap-10'>
+                <div id='linetime'>
+                  <div className="left-0 top-0 -ml-0.5 w-[22px] h-[22px] rounded-full border-2 border-orange-800" />
+                  <div className="top-0 ml-2 h-20 w-0.5 bg-orange-800" />
+                </div>
+                <div id='text' className="">
+                  <h3 className="font-bold text-mainGradient">Impression personnalisée</h3>
+                  <p className="text-sm text-black">Nous vous offrons une livraison rapide et gratuite à partir de 3 pièces</p>  
+                </div>
+              </div>
+              <div id='service2' className='flex flex-row gap-10'>
+                <div id='linetime'>
+                  <div className="left-0 top-0 -ml-0.5 w-[22px] h-[22px] rounded-full border-2 border-orange-800" />
+                  <div className="top-0 ml-2 h-20 w-0.5 bg-orange-800" />
+                </div>
+                <div id='text' className="">
+                  <h3 className="font-bold text-mainGradient">Impression personnalisée</h3>
+                  <p className="text-sm text-black">Nous vous offrons une livraison rapide et gratuite à partir de 3 pièces</p>  
+                </div>
+              </div>
+              <div id='service3' className='flex flex-row gap-10'>
+                <div id='linetime'>
+                  <div className="left-0 top-0 -ml-0.5 w-[22px] h-[22px] rounded-full border-2 border-orange-800" />
+                  <div className="top-0 ml-2 h-20 w-0.5 bg-orange-800" />
+                </div>
+                <div id='text' className="">
+                  <h3 className="font-bold text-mainGradient">Impression personnalisée</h3>
+                  <p className="text-sm text-black">Nous vous offrons une livraison rapide et gratuite à partir de 3 pièces</p>  
+                </div>
+              </div>
+        
+            </div>
+          </div>
+
+        </div>
+        <div id='contactSection' className='h-[35rem] bg-mixedGradient  p-10 flex flex-col gap-10'>
+          <BigTitle id="contact">Contactez nous</BigTitle>
+
+        </div>
     </div>
   )
 }

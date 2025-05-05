@@ -21,6 +21,8 @@ export default {
         'mainGradient': 'linear-gradient(to bottom right, #FF8A00, #D83000)',
         'secondaryGradient': 'linear-gradient(to bottom right, #FF8A00, #7C2D12)',
         'chocoGradient': 'linear-gradient(to bottom right, #5c0000, #7C2D12)',
+        'mixedGradient': 'linear-gradient(to bottom left, #B4B4B499, #FFC89699, #C8643299)',
+  
       },
       fontFamily: {
         playfair: ['"Playfair Display"', 'serif'],
