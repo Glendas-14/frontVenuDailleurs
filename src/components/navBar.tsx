@@ -36,7 +36,7 @@ export default function HeaderNav() {
           <Link to="/" className="text-gray-800 hover:text-red-600 font-medium">
             Acceuil
           </Link>
-          <Link to="/a-propos" className="text-gray-800 hover:text-red-600 font-medium">
+          <Link to="/" className="text-gray-800 hover:text-red-600 font-medium">
             A propos
           </Link>
           <Link to="/articles" className="text-gray-800 hover:text-red-600 font-medium">
@@ -52,6 +52,14 @@ export default function HeaderNav() {
             {isDropdownOpen && (
               <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded shadow-lg w-48">
                 <ul className="py-2">
+                  <li>
+                    <Link
+                      to="/collection1"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-red-600"
+                    >
+                      Toutes les collections
+                    </Link>
+                  </li>
                   <li>
                     <Link
                       to="/collection1"
@@ -88,7 +96,7 @@ export default function HeaderNav() {
               </div>
             )}
           </div>
-          <Link to="/contact" className="text-gray-800 hover:text-red-600 font-medium">
+          <Link to="/" className="text-gray-800 hover:text-red-600 font-medium">
             Contact
           </Link>
         </nav>

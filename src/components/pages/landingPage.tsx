@@ -28,7 +28,7 @@ export default function LandingPage() {
             </div>
             <div id="btnSection" className=" flex flex-row justify-start items-center mx-20  gap-4 -mt-10">
               <div className='w-1/4 h-full'>
-                <Link to={`/products`} className="bg-mainGradient w-full rounded-2xl py-2 flex justify-center items-center gap-5 hover:bg-secondaryGradient hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-secondaryOrange">
+                <Link to={`/articles`} className="bg-mainGradient w-full rounded-2xl py-2 flex justify-center items-center gap-5 hover:bg-secondaryGradient hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-secondaryOrange">
                   <span>Commander</span>
                   <ShoppingCart className="h-9 w-9 text-white" />
                 </Link>
