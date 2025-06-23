@@ -8,6 +8,8 @@ import ProductCard from '../Card/product'
 import CollectionCard from '../Card/collection'
 import collections from '../data/collections'
 import products from '../data/products'
+import { ContactSection } from '../contact/contact'
+import Footer from '../footer'
 
 
 
@@ -173,10 +175,23 @@ export default function LandingPage() {
           </div>
 
         </div>
-        <div id='contactSection' className='h-[35rem] bg-mixedGradient  p-10 flex flex-col gap-10'>
+        <ContactSection/>
+        {/* <div id='contactSection' className='h-[35rem] bg-mixedGradient  p-10 flex flex-col gap-10'>
           <BigTitle id="contact">Contactez nous</BigTitle>
+          <div id='contactContent' className='w-full h-full flex justify-center items-center gap-2'>
+            <div id='info' className='w-1/2 h-full'>
 
-        </div>
+            </div>
+            <form action="">
+              <p>Soumettez-nous librement toutes vos préoccupations</p>
+              <input type="text" name="username" id="username" placeholder='Votre nom' className='placeholder:text-gray-700 placeholder:font-light border border-coral-400 focus:outline-none focus:ring-2 focus:ring-orange-700'/>
+              <input type="text" name="username" id="username" placeholder='Objet' className='placeholder:text-gray-700 placeholder:font-light border border-coral-400 focus:outline-none focus:ring-2 focus:ring-orange-700'/>
+              <textarea name="username" id="username" placeholder='Votre message' className='placeholder:text-gray-700 placeholder:font-light border border-coral-400 focus:outline-none focus:ring-2 focus:ring-orange-700'/>
+              <input type="submit" className='border border-coral-400 focus:outline-none focus:ring-2 focus:ring-orange-700'/>
+            </form>
+          </div>
+        </div> */}
+        <Footer/>
     </div>
   )
 }
