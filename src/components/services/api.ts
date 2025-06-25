@@ -2,7 +2,8 @@ import axios from 'axios';
 
 const api = axios.create({
 
-  baseURL: 'https://mumtech-api.onrender.com'
+//   baseURL: 'https://mumtech-api.onrender.com'
+    baseURL: 'http://127.0.0.1:3333' // Pour le développement local
 });
 
 export const registerAccountInfo = async (formData: FormData) => {
