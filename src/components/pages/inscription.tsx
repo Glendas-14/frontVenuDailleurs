@@ -1,17 +1,17 @@
 
 import type React from "react"
-
 import { useState } from "react"
-import {Link} from "react-router-dom"
-
+import {Link, useNavigate} from "react-router-dom"
+import { registerAccountInfo } from '../../components/services/api';
 
 export default function RegistrationForm() {
+ const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    prenom: "",
-    nom: "",
-    email: "",
-    motDePasse: "",
-  })
+    user_firstname: "",
+    user_name: "",
+    user_email: "",
+    user_password: "",
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -21,10 +21,27 @@ export default function RegistrationForm() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log("Données du formulaire soumises:", formData)
-    // Logique pour envoyer les données à votre API
+    const form = new FormData()
+    form.append("user_firstname", formData.user_firstname)
+    form.append("user_name", formData.user_name)
+    form.append("user_email", formData.user_email)
+    form.append("user_password", formData.user_password)
+
+    try {
+      const response = await registerAccountInfo(form)
+      // Supposons que response.data contient un token ou l'utilisateur
+      // Stocke le token ou l'info utilisateur
+      if (response?.token) {
+        localStorage.setItem("token", response.token)
+      }
+      alert('Compte créé avec succès')
+      navigate("/courses") // Redirige vers la page des cours
+    } catch (error) {
+      console.error(error)
+      alert('Erreur lors de la création du compte')
+    }
   }
 
   return (
@@ -42,7 +59,7 @@ export default function RegistrationForm() {
             type="text"
             name="prenom"
             placeholder="Prénom"
-            value={formData.prenom}
+            value={formData.user_firstname}
             onChange={handleChange}
             className="w-full border border-gray-300 p-3 focus:outline-none focus:ring-0 focus:border-gray-400"
             required
@@ -52,7 +69,7 @@ export default function RegistrationForm() {
             type="text"
             name="nom"
             placeholder="Nom"
-            value={formData.nom}
+            value={formData.user_name}
             onChange={handleChange}
             className="w-full border border-gray-300 p-3 focus:outline-none focus:ring-0 focus:border-gray-400"
             required
@@ -62,7 +79,7 @@ export default function RegistrationForm() {
             type="email"
             name="email"
             placeholder="Email"
-            value={formData.email}
+            value={formData.user_email}
             onChange={handleChange}
             className="w-full border border-gray-300 p-3 focus:outline-none focus:ring-0 focus:border-gray-400"
             required
@@ -72,7 +89,7 @@ export default function RegistrationForm() {
             type="password"
             name="motDePasse"
             placeholder="Mot de passe"
-            value={formData.motDePasse}
+            value={formData.user_password}
             onChange={handleChange}
             className="w-full border border-gray-300 p-3 focus:outline-none focus:ring-0 focus:border-gray-400"
             required
