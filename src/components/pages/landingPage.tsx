@@ -6,8 +6,7 @@ import BigTitle from '../Title/bigTitle'
 import Card from '../Card/simpleCard'
 import ProductCard from '../Card/product'
 import CollectionCard from '../Card/collection'
-import collections from '../data/collections'
-import products from '../data/products'
+import {collections} from '../data/collections'
 import { ContactSection } from '../contact/contact'
 import Footer from '../footer'
 
@@ -91,27 +90,65 @@ export default function LandingPage() {
             <span>Découvrez plus</span>
           </Link>
         </div> */}
-
         <div id='articleSection' className='h-[40rem] bg-simpleGray p-10 flex flex-col gap-10'>
           <BigTitle id="articles">Nos articles</BigTitle>
           <div id='products' className='w-full h-auto flex flex-row items-center justify-center gap-10'>
-            {products.slice(0, 4).map((product, index) => (
+            {/* Premier produit de chaque collection */}
+            {collections.map((collection, index) => {
+              const product = collection.products[0];
+              if (!product) return null;
+              return (
+                <ProductCard
+                  key={`main-${index}`}
+                  title={product.title ?? 'Article quelconque'}
+                  description={product.description ?? 'Description non disponible'}
+                  imageUrl={product.imageUrl ?? ''}
+                  price={product.price ?? 0}
+                />
+              );
+            })}
+            {/* Deuxième produit de la deuxième collection */}
+            {collections[0] && collections[0].products[1] && (
               <ProductCard
-                key={index}
-                title={product.title ?? 'Article quelconque'}
-                description={product.description ?? 'Description non disponible'}
-                imageUrl={product.imageUrl ?? ''}
-                price={product.price ?? 0}
+                key="second-collection-second-product"
+                title={collections[0].products[1].title ?? 'Article quelconque'}
+                description={collections[0].products[1].description ?? 'Description non disponible'}
+                imageUrl={collections[0].products[1].imageUrl ?? ''}
+                price={collections[0].products[1].price ?? 0}
               />
-            ))}
+            )}
           </div>
           <Link
-            to={`/products`}
+            to={`/articles`}
             className="bg-mainGradient w-1/5 rounded-2xl py-2 ml-5 flex justify-center items-center hover:bg-secondaryGradient hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-secondaryOrange"
           >
             <span>Découvrez plus</span>
           </Link>
         </div>
+        {/* <div id='articleSection' className='h-[40rem] bg-simpleGray p-10 flex flex-col gap-10'>
+          <BigTitle id="articles">Nos articles</BigTitle>
+          <div id='products' className='w-full h-auto flex flex-row items-center justify-center gap-10'>
+            {collections.map((collection, index) => {
+              const product = collection.products[0];
+              if (!product) return null;
+              return (
+                <ProductCard
+                  key={index}
+                  title={product.title ?? 'Article quelconque'}
+                  description={product.description ?? 'Description non disponible'}
+                  imageUrl={product.imageUrl ?? ''}
+                  price={product.price ?? 0}
+                />
+              );
+            })}
+          </div>
+          <Link
+            to={`/articles`}
+            className="bg-mainGradient w-1/5 rounded-2xl py-2 ml-5 flex justify-center items-center hover:bg-secondaryGradient hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-secondaryOrange"
+          >
+            <span>Découvrez plus</span>
+          </Link>
+        </div> */}
         <div id='collectionSection' className='h-[40rem] bg-white p-10 flex flex-col gap-10'>
           <BigTitle id='collections' children={`Nos collections`} />
           <div id='collections' className='w-full h-full flex items-center justify-center gap-10'>
@@ -119,13 +156,13 @@ export default function LandingPage() {
               <CollectionCard
                 key={index}
                 title={collection.title}
-                images={collection.images}
+                images={collection.products.map(product => product.imageUrl)}
               />
             ))}
           </div>
           <div id='sectionBtn' className='w-full flex justify-end'>
             <Link
-              to={`/about`}
+              to={`/collections`}
               className="w-56 bg-orangeChoco hover:bg-secondaryOrange font-roboto font-bold text-white px-6 py-3 rounded-md flex justify-center items-center space-x-5 transition-colors"
             >
               <span>Voir plus</span>
