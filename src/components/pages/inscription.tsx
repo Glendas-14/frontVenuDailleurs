@@ -37,7 +37,7 @@ export default function RegistrationForm() {
         localStorage.setItem("token", response.token)
       }
       alert('Compte créé avec succès')
-      navigate("/courses") // Redirige vers la page des cours
+      navigate("/login") // Redirige vers la page des cours
     } catch (error) {
       console.error(error)
       alert('Erreur lors de la création du compte')
@@ -57,7 +57,7 @@ export default function RegistrationForm() {
         <form onSubmit={handleSubmit} className="space-y-4 w-3/4 flex flex-col justify-center">
           <input
             type="text"
-            name="prenom"
+            name="user_firstname"
             placeholder="Prénom"
             value={formData.user_firstname}
             onChange={handleChange}
@@ -67,7 +67,7 @@ export default function RegistrationForm() {
 
           <input
             type="text"
-            name="nom"
+            name="user_name"
             placeholder="Nom"
             value={formData.user_name}
             onChange={handleChange}
@@ -77,7 +77,7 @@ export default function RegistrationForm() {
 
           <input
             type="email"
-            name="email"
+            name="user_email"
             placeholder="Email"
             value={formData.user_email}
             onChange={handleChange}
@@ -87,7 +87,7 @@ export default function RegistrationForm() {
 
           <input
             type="password"
-            name="motDePasse"
+            name="user_password"
             placeholder="Mot de passe"
             value={formData.user_password}
             onChange={handleChange}

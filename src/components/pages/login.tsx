@@ -44,7 +44,7 @@ export default function RegistrationForm() {
             localStorage.setItem('user_info', JSON.stringify(result.userInfo));
             console.log(result)
             alert("vous êtes connecté")
-            navigate('/courses')
+            navigate('/articles');
         }).catch((error)=>{
             alert(error.response.data.message + " ; " +error.response.data.error)
         })
@@ -73,7 +73,7 @@ export default function RegistrationForm() {
 
           <input
             type="password"
-            name="motDePasse"
+            name="password"
             placeholder="Mot de passe"
             value={formData.password}
             onChange={handleChange}
