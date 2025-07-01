@@ -6,14 +6,12 @@ interface CardProps {
 
 export default function Card({title, description, imageUrl}: CardProps) {
     return(
-        <div className="w-2/5 h-2/3 flex flex-col justify-center items-center gap-7 px-10 py-10 bg-chocoGradient rounded-lg shadow-md shadow-black">
-            <div className="w-full h-1/2 flex justify-center items-center">
-                <img src={imageUrl} alt="Card Image" className="w-14 h-14 rounded-full" />
-            </div>
-            <div className="w-full h-1/2 flex flex-col justify-center items-center text-center gap-4 mb-5">
-                <h2 className="text-xl font-bold text-white">{title}</h2>
-                <p className="text-lightGray">{description}</p>
-            </div>
-        </div>
+        <div className="w-full sm:w-80 md:w-96 lg:w-80 xl:w-96 h-auto bg-secondaryOrange rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+      <div className="flex justify-center mb-4">
+        <img src={imageUrl} alt={title} className="w-16 h-16 object-contain" />
+      </div>
+      <h3 className="text-xl font-bold text-white mb-3 text-center">{title}</h3>
+      <p className="text-gray-50 text-center leading-relaxed">{description}</p>
+    </div>
     )
 }
